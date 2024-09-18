@@ -1,0 +1,26 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="row w-100">
+    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <div class="text-center mb-4">
+            <h2 class="card-title">Verify Reset Code</h2>
+            <p class="text-muted">Please enter the code that was sent to your email address.</p>
+          </div>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="code" class="form-label">Reset Code</label>
+              <input type="text" [(ngModel)]="code" name="code" class="form-control" id="code" placeholder="Enter your reset code" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Verify Code</button>
+          </form>
+
+          <!-- Error message display -->
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
